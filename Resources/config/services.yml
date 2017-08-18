@@ -1,0 +1,4 @@
+services:
+#    kit_pay.example:
+#        class: Kit\Bundle\KitPayBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
