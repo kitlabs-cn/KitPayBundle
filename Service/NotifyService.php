@@ -1,7 +1,7 @@
 <?php
 namespace Kit\Bundle\KitPayBundle\Service;
 
-class PaymentService 
+class NotifyService
 {
     public function Alipay()
     {

@@ -1,7 +1,7 @@
 <?php
 namespace Kit\Bundle\KitPayBundle\Service;
 
-class PaymentService 
+class TransferService
 {
     public function Alipay()
     {
@@ -15,4 +15,4 @@ class PaymentService
     {
         
     }
-}
+}<?php
