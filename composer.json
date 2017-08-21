@@ -2,7 +2,7 @@
 	"name": "kitlabs/kit-pay-bundle",
 	"type": "symfony-bundle",
 	"description": "Easily use alipay & weixinpay in Symfony",
-	"keywords": ["Aliyun OSS"],
+	"keywords": ["payment alipay weixin pay"],
 	"homepage": "https://github.com/kitlabs-cn/KitPayBundle",
 	"license": "MIT",
 	"authors": [
@@ -20,6 +20,7 @@
 		"email": "lcp0578@gmail.com"
 	},
 	"require": {
+		"php": ">=5.6",
 		"riverslei/payment": "~4.0.0"
 	},
 	"autoload": {
