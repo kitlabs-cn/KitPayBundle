@@ -1,5 +1,5 @@
 # KitPayBundle
-Symfony wrapper for [payment](https://github.com/helei112g/payment) 
+Symfony wrapper for [payment](https://github.com/helei112g/payment).  
 The KitPayBundle provides a simple integration for your Symfony project.
 
 ## Installation
@@ -74,7 +74,7 @@ in the `app/AppKernel.php` file of your project:
 	            return_url: http://kitlabs.cn/return
 	            return_raw: true # 异步回调是否显示原始数据
 
-	Read the [payment configure documentation](https://helei112g1.gitbooks.io/payment-sdk/content/ji-chu-pei-zhi.html)
+Read the [payment configure documentation](https://helei112g1.gitbooks.io/payment-sdk/content/ji-chu-pei-zhi.html)
 ## Usage
 - alipay
 
