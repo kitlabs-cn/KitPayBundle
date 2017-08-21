@@ -2,3 +2,9 @@ services:
 #    kit_pay.example:
 #        class: Kit\Bundle\KitPayBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+    kit_pay.base_service:
+        class: Kit\Bundle\KitPayBundle\BaseService
+        arguments: ["%kit_pay.config%"]
+    kit_pay.payment_service:
+        class: Kit\Bundle\KitPayBundle\PaymentService        
+        parent: "kit_oss.client_service"

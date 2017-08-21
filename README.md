@@ -50,9 +50,9 @@ in the `app/AppKernel.php` file of your project:
 	kit_pay:
 	    config:
 	        alipay:
-	            use_snadbox: true
-	            partner: 20888********
-	            app_id: *****
+	            use_sandbox: true
+	            partner: 20888xxxxxx
+	            app_id: xxxxxxx
 	            sign_type: RSA2 # RSA or RSA2
 	            ali_public_key: /path # path or content
 	            rsa_private_key: /path # path or content
@@ -60,22 +60,25 @@ in the `app/AppKernel.php` file of your project:
 	            notify_url: http://kitlabs.cn/notify
 	            return_url: http://kitlabs.cn/return
 	            return_raw: true # 异步回调是否显示原始数据
-	       weipay:
-	            use_snadbox: true
-	            app_id: ******
-	            mch_id: ******
-	            md5_key: ******
+	        weipay:
+	            use_sandbox: true
+	            app_id: xxxxxx
+	            mch_id: xxxxxx
+	            md5_key: xxxxxx
 	            app_cert_pem: /path
 	            app_key_pem: /path
 	            sign_type: MD5  # MD5 or HMAC-SHA256
 	            limit_pay: ['no_credit']
 	            fee_type: CNY
 	            notify_url: http://kitlabs.cn/notify
-	            return_url: http://kitlabs.cn/return
+	            redirect_url: http://kitlabs.cn/return
 	            return_raw: true # 异步回调是否显示原始数据
 
 Read the [payment configure documentation](https://helei112g1.gitbooks.io/payment-sdk/content/ji-chu-pei-zhi.html)
 ## Usage
-- alipay
 
-- weipay(weixin)
+	/**
+     * @var \Kit\Bundle\KitPayBundle\Service\PaymentService $paymentService
+     */
+    $paymentService = $this->get('kit_pay.payment_service');
+    $paymentService->run($channel, $metadata); // $channel one of "alipay","weipay"
