@@ -2,7 +2,7 @@
 	"name": "kitlabs/kit-pay-bundle",
 	"type": "symfony-bundle",
 	"description": "Easily use alipay & weixinpay in Symfony",
-	"keywords": ["payment alipay weixin pay"],
+	"keywords": ["pay bundle","payment", "alipay", "weixin pay"],
 	"homepage": "https://github.com/kitlabs-cn/KitPayBundle",
 	"license": "MIT",
 	"authors": [
