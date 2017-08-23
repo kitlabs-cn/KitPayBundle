@@ -51,8 +51,8 @@ in the `app/AppKernel.php` file of your project:
 	    config:
 	        alipay:
 	            use_sandbox: true
-	            partner: 20888xxxxxx
-	            app_id: xxxxxxx
+	            partner: 20888xxxxxx  #收款支付宝用户ID
+	            app_id: 2014072xxxxxxx # 支付宝分配给开发者的应用ID
 	            sign_type: RSA2 # RSA or RSA2
 	            ali_public_key: /path # path or content
 	            rsa_private_key: /path # path or content
@@ -62,11 +62,11 @@ in the `app/AppKernel.php` file of your project:
 	            return_raw: true # 异步回调是否显示原始数据
 	        weipay:
 	            use_sandbox: true
-	            app_id: xxxxxx
-	            mch_id: xxxxxx
-	            md5_key: xxxxxx
-	            app_cert_pem: /path
-	            app_key_pem: /path
+	            app_id: wx47xxxxxxx # appid是微信公众账号或开放平台APP的唯一标识
+	            mch_id: 148xxxxxx # 商户收款账号
+	            md5_key: de95341c9xxxxxx # API密钥
+	            app_cert_pem: '%kernel.root_dir%/cert/apiclient_cert.pem' # app/cert/apiclient_cert.pem
+	            app_key_pem: '%kernel.root_dir%/cert/apiclient_key.pem'  # app/cert/apiclient_key.pem
 	            sign_type: MD5  # MD5 or HMAC-SHA256
 	            limit_pay: ['no_credit']
 	            fee_type: CNY
