@@ -35,7 +35,7 @@ in the `app/AppKernel.php` file of your project:
 	        $bundles = array(
 	            // ...
 	 
-	            new Kit\Bundle\KitPayBundle\KitPayBundle(),
+	            new Kit\Bundle\PayBundle\KitPayBundle(),
 	        );
 	 
 	        // ...
