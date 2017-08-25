@@ -54,8 +54,8 @@ in the `app/AppKernel.php` file of your project:
 	            partner: 20888xxxxxx  #收款支付宝用户ID
 	            app_id: 2014072xxxxxxx # 支付宝分配给开发者的应用ID
 	            sign_type: RSA2 # RSA or RSA2
-	            ali_public_key: /path # path or content
-	            rsa_private_key: /path # path or content
+	            ali_public_key: '%kernel.root_dir%/alipay/alipay_public_key_sha256.txt' # path or content(app/alipay/alipay_public_key_sha256.txt)
+	            rsa_private_key: '%kernel.root_dir%/alipay/rsa_private_key_2048.txt' # path or content(app/alipay/rsa_private_key_2048.txt)
 	            limit_pay: ['creditCard']
 	            notify_url: http://kitlabs.cn/notify
 	            return_url: http://kitlabs.cn/return
