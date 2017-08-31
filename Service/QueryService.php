@@ -1,5 +1,5 @@
 <?php
-namespace Kit\Bundle\KitPayBundle\Service;
+namespace Kit\Bundle\PayBundle\Service;
 
 class QueryService
 {

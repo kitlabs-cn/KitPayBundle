@@ -78,7 +78,7 @@ Read the [payment configure documentation](https://helei112g1.gitbooks.io/paymen
 ## Usage
 
 	/**
-     * @var \Kit\Bundle\KitPayBundle\Service\PaymentService $paymentService
+     * @var \Kit\Bundle\PayBundle\Service\PaymentService $paymentService
      */
     $paymentService = $this->get('kit_pay.payment_service');
     $paymentService->run($channel, $metadata); // $channel one of "alipay","weipay"

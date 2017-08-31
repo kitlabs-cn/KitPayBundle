@@ -1,6 +1,6 @@
 <?php
 
-namespace Kit\Bundle\KitPayBundle;
+namespace Kit\Bundle\PayBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

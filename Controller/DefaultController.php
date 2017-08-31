@@ -1,6 +1,6 @@
 <?php
 
-namespace Kit\Bundle\KitPayBundle\Controller;
+namespace Kit\Bundle\PayBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

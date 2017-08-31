@@ -1,6 +1,6 @@
 <?php
 
-namespace Kit\Bundle\KitPayBundle\DependencyInjection;
+namespace Kit\Bundle\PayBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
