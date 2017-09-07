@@ -6,8 +6,23 @@ use Payment\Client\Charge;
 
 class PaymentService extends BaseService
 {
-    public function run($channel, $metadata)
+    /**
+     * 
+     * @param unknown $channel
+     * @param unknown $paytype
+     * @param unknown $metadata
+     * @return number[]|string[]|number[]|string[]|number[]|string[]|mixed[]|array[]|number[]|string[]|NULL[][]
+     */
+    public function run($channel, $paytype, $metadata)
     {
+        // check paytype
+       if(!$this->checkPayType($channel, $paytype)){
+           return [
+               'code' => 2,
+               'msg' => 'pay type error',
+               'data' => ''
+           ];
+       }
        $result = $this->getConfig($channel);
        if(1 == $result['code']){
            $config = $result['data'];
@@ -15,7 +30,7 @@ class PaymentService extends BaseService
            return $result;
        }
        try {
-           $str = Charge::run($channel, $config, $metadata);
+           $str = Charge::run($paytype, $config, $metadata);
            return [
                'code' => 1,
                'msg' => 'success',

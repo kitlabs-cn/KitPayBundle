@@ -77,8 +77,31 @@ in the `app/AppKernel.php` file of your project:
 Read the [payment configure documentation](https://helei112g1.gitbooks.io/payment-sdk/content/ji-chu-pei-zhi.html)
 ## Usage
 
+	//paytype and channel
+	$types = [
+            'alipay' => [
+                'ali_app', // 支付宝app支付
+                'ali_wap', // 支付宝H5支付
+                'ali_web', // 支付宝电脑网站支付
+                'ali_qr', // 支付宝当面付：扫码支付
+                'ali_bar' // 支付宝当面付：条码支付
+            ],
+            'weipay' => [
+                'wx_app', // 微信app支付
+                'wx_pub', // 微信公众号支付
+                'wx_qr', // 微信扫码支付
+                'wx_bar', // 微信刷卡支付
+                'wx_lite', // 微信小程序支付
+                'wx_wap' // 微信H5支付
+            ],
+            'cmbpay' => [
+                'cmb_app', // 招商一网通app支付
+                'cmb_wap' // 招商H5支付
+            ]
+        ];
+
 	/**
      * @var \Kit\Bundle\PayBundle\Service\PaymentService $paymentService
      */
     $paymentService = $this->get('kit_pay.payment_service');
-    $paymentService->run($channel, $metadata); // $channel one of "alipay","weipay"
+    $paymentService->run($channel, $paytype,  $metadata); // $channel one of "alipay","weipay"
