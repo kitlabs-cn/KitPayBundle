@@ -16,8 +16,12 @@ class BaseService
     {
         $this->config = $config;
     }
-
-    public function getConfig($channel)
+    /**
+     * get config by channel
+     * @param unknown $channel
+     * @return number[]|string[]|number[]|string[]
+     */
+    protected function getConfig($channel)
     {
         if (! in_array($channel, $this->channels)) {
             return [
@@ -39,8 +43,13 @@ class BaseService
             'data' => $this->config[$channel]
         ];
     }
-
-    public function checkPayType($channel, $paytype)
+    /**
+     * 
+     * @param unknown $channel
+     * @param unknown $paytype
+     * @return boolean
+     */
+    protected function checkPayType($channel, $paytype)
     {
         $types = [
             'alipay' => [

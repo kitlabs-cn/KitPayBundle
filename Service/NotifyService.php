@@ -1,18 +1,48 @@
 <?php
 namespace Kit\Bundle\PayBundle\Service;
 
-class NotifyService
+use Payment\Common\PayException;
+use Payment\Client\Notify;
+use Payment\Notify\PayNotifyInterface;
+
+class NotifyService extends BaseService
 {
-    public function Alipay()
+    private $types = [
+        'alipay' => 'ali_charge',
+        'weipay' => 'wx_charge',
+        'cmbpay' => 'cmb_charge'
+    ];
+    /**
+     * 
+     * @param unknown $channel
+     * @param PayNotifyInterface $callback
+     * @return number[]|string[]|number[]|string[]|array[]|number[]|string[]|NULL[][]
+     */
+    public function run($channel, PayNotifyInterface $callback)
     {
-        
+        $result = $this->getConfig($channel);
+        if(1 == $result['code']){
+            $config = $result['data'];
+        }else{
+            return $result;
+        }
+        try {
+            $str = Notify::run($this->types[$channel], $config, $callback);
+            return [
+                'code' => 1,
+                'msg' => 'success',
+                'data' => $str
+            ];
+        } catch (PayException $e) {
+            return [
+                'code' => 0,
+                'msg' => 'exception',
+                'data' => [
+                    'code' => $e->getCode(),
+                    'message' => $e->getMessage()
+                ]
+            ];
+        }
     }
-    public function Weipay()
-    {
-        
-    }
-    public function Cmbpay()
-    {
-        
-    }
+    
 }
