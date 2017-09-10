@@ -1,6 +1,8 @@
 <?php
 namespace Kit\Bundle\PayBundle\Service;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 class BaseService
 {
 
@@ -11,10 +13,13 @@ class BaseService
     ];
 
     private $config = [];
+    
+    protected $container;
 
-    public function __construct($config)
+    public function __construct($config, ContainerInterface $container)
     {
         $this->config = $config;
+        $this->container = $container;
     }
     /**
      * get config by channel

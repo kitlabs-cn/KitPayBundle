@@ -28,11 +28,19 @@ class NotifyService extends BaseService
         }
         try {
             $str = Notify::run($this->types[$channel], $config, $callback);
-            return [
-                'code' => 1,
-                'msg' => 'success',
-                'data' => $str
-            ];
+            if(false !== strpos($str, 'SUCCESS') || false !== strpos($str, 'success')){
+                return [
+                    'code' => 1,
+                    'msg' => 'success',
+                    'data' => $str
+                ];
+            }else{
+                return [
+                    'code' => 2,
+                    'msg' => 'faild',
+                    'data' => $str
+                ];
+            }
         } catch (PayException $e) {
             return [
                 'code' => 0,

@@ -4,8 +4,11 @@ services:
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
     kit_pay.base_service:
         class: Kit\Bundle\PayBundle\Service\BaseService
-        arguments: ["%kit_pay.config%"]
+        arguments: ["%kit_pay.config%", "@service_container"]
     kit_pay.payment_service:
         class: Kit\Bundle\PayBundle\Service\PaymentService        
+        parent: "kit_pay.base_service"
+    kit_pay.notify_service:
+        class: Kit\Bundle\PayBundle\Service\NotifyService        
         parent: "kit_pay.base_service"
 
