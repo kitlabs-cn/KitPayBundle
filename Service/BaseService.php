@@ -23,7 +23,7 @@ class BaseService
     }
     /**
      * get config by channel
-     * @param unknown $channel
+     * @param string $channel
      * @return number[]|string[]|number[]|string[]
      */
     protected function getConfig($channel)
@@ -50,8 +50,8 @@ class BaseService
     }
     /**
      * 
-     * @param unknown $channel
-     * @param unknown $paytype
+     * @param string $channel
+     * @param string $paytype
      * @return boolean
      */
     protected function checkPayType($channel, $paytype)
@@ -78,5 +78,19 @@ class BaseService
             ]
         ];
         return array_key_exists($channel, $types) && in_array($paytype, $types[$channel]);
+    }
+    /**
+     * 
+     * @param string $channel
+     * @param string $paytype
+     * @return boolean
+     */
+    protected function checkConfig($channel, $paytype)
+    {
+        return [
+            'code' => 1,
+            'msg' => 'success',
+            'data' => ''
+        ];
     }
 }

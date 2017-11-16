@@ -8,12 +8,13 @@ class PaymentService extends BaseService
 {
     /**
      * 
-     * @param unknown $channel
-     * @param unknown $paytype
-     * @param unknown $metadata
+     * @param string $channel
+     * @param string $paytype
+     * @param array $metadata
+     * @param array $config
      * @return number[]|string[]|number[]|string[]|number[]|string[]|mixed[]|array[]|number[]|string[]|NULL[][]
      */
-    public function run($channel, $paytype, $metadata)
+    public function run($channel, $paytype, $metadata, $config = [])
     {
         // check paytype
        if(!$this->checkPayType($channel, $paytype)){
@@ -23,11 +24,18 @@ class PaymentService extends BaseService
                'data' => ''
            ];
        }
-       $result = $this->getConfig($channel);
-       if(1 == $result['code']){
-           $config = $result['data'];
-       }else{
-           return $result;
+       if(empty($config)){
+           $result = $this->getConfig($channel);
+           if(1 == $result['code']){
+               $config = $result['data'];
+           }else{
+               return $result;
+           }
+       }
+       // check config
+       $checkResult = $this->checkConfig($channel, $paytype);
+       if( 1 != $checkResult['code'] ) {
+           return $checkResult;
        }
        try {
            $str = Charge::run($paytype, $config, $metadata);
