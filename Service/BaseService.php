@@ -13,7 +13,7 @@ class BaseService
     ];
 
     private $config = [];
-    
+
     protected $container;
 
     public function __construct($config, ContainerInterface $container)
@@ -21,9 +21,11 @@ class BaseService
         $this->config = $config;
         $this->container = $container;
     }
+
     /**
      * get config by channel
-     * @param string $channel
+     * 
+     * @param string $channel            
      * @return number[]|string[]|number[]|string[]
      */
     protected function getConfig($channel)
@@ -48,10 +50,11 @@ class BaseService
             'data' => $this->config[$channel]
         ];
     }
+
     /**
-     * 
-     * @param string $channel
-     * @param string $paytype
+     *
+     * @param string $channel            
+     * @param string $paytype            
      * @return boolean
      */
     protected function checkPayType($channel, $paytype)
@@ -79,14 +82,30 @@ class BaseService
         ];
         return array_key_exists($channel, $types) && in_array($paytype, $types[$channel]);
     }
+
     /**
-     * 
-     * @param string $channel
-     * @param string $paytype
+     *
+     * @param string $channel            
+     * @param string $paytype            
      * @return boolean
      */
     protected function checkConfig($channel, $paytype)
     {
+        switch ($channel) {
+            case 'alipay':
+                break;
+            case 'weipay':
+                break;
+            case 'cmbpay':
+                break;
+            default:
+                return [
+                    'code' => 2,
+                    'msg' => 'channel error',
+                    'data' => ''
+                ];
+                break;
+        }
         return [
             'code' => 1,
             'msg' => 'success',
