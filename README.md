@@ -11,7 +11,7 @@ Open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
  
 	
-	$ composer require kitlabs/kit-pay-bundle "~0.1"
+	$ composer require kitlabs/kit-pay-bundle
 
  
 This command requires you to have Composer installed globally, as explained
@@ -105,3 +105,7 @@ Read the [payment configure documentation](https://helei112g1.gitbooks.io/paymen
      */
     $paymentService = $this->get('kit_pay.payment_service');
     $paymentService->run($channel, $paytype,  $metadata); // $channel one of "alipay","weipay"
+
+	// 不使用默认配置的商户号支付，添加额外商户号支付
+	$paymentService->run($channel, $paytype,  $metadata，$config); // $config为配置的数组
+	
