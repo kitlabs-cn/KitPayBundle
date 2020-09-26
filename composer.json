@@ -1,31 +1,34 @@
 {
-	"name": "kitlabs/kit-pay-bundle",
-	"type": "symfony-bundle",
-	"description": "Easily use alipay & weixinpay in Symfony",
-	"keywords": ["pay bundle","payment", "alipay", "weixin pay"],
-	"homepage": "https://github.com/kitlabs-cn/KitPayBundle",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "lcp0578",
-			"email": "lcp0578@gmail.com",
-			"homepage": "https://github.com/lcp0578"
-		},
-		{
-			"name": "The contributors",
-			"homepage": "https://github.com/kitlabs-cn/KitPayBundle/contributors"
+	"name" : "kitlabs/kit-pay-bundle",
+	"type" : "symfony-bundle",
+	"description" : "Easily use alipay & weixinpay in Symfony",
+	"keywords" : [
+		"pay bundle",
+		"payment",
+		"alipay",
+		"weixin pay"
+	],
+	"homepage" : "https://github.com/kitlabs-cn/KitPayBundle",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "lcp0578",
+			"email" : "lcp0578@gmail.com",
+			"homepage" : "https://github.com/lcp0578"
+		}, {
+			"name" : "The contributors",
+			"homepage" : "https://github.com/kitlabs-cn/KitPayBundle/contributors"
 		}
 	],
-	"support": {
-		"email": "lcp0578@gmail.com"
+	"support" : {
+		"email" : "lcp0578@gmail.com"
 	},
-	"require": {
-		"php": ">=5.6",
-		"riverslei/payment": "^4.0"
+	"require" : {
+		"php" : ">=5.6",
+		"riverslei/payment" : "4.x-dev"
 	},
-	"autoload": {
-		 "psr-4": {
-            "Kit\\Bundle\\PayBundle\\": ""
-        }
+	"autoload" : {
+		"psr-4" : {
+			"Kit\\Bundle\\PayBundle\\" : ""
+		}
 	}
 }
