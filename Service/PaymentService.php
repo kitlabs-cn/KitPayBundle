@@ -3,6 +3,8 @@ namespace Kit\Bundle\PayBundle\Service;
 
 use Payment\Common\PayException;
 use Payment\Client\Charge;
+use Payment\Client\Refund;
+use Payment\Config;
 
 class PaymentService extends BaseService
 {
