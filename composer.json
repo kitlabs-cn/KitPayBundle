@@ -24,7 +24,7 @@
 	},
 	"require" : {
 		"php" : ">=5.6",
-		"riverslei/payment" : "4.x-dev"
+		"riverslei/payment" : "v4.x-dev"
 	},
 	"autoload" : {
 		"psr-4" : {
